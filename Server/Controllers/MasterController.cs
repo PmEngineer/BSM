@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace BSM.Server.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class MasterController : Controller
     {
         public IActionResult Index()
