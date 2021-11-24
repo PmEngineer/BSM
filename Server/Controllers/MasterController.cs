@@ -3,16 +3,37 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using BSM.Server.Service;
+using BSM.Shared.Model;
 namespace BSM.Server.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Master")]
     [ApiController]
-    public class MasterController : Controller
+    public class MasterController : ControllerBase
     {
-        public IActionResult Index()
+        private IMasterService masterService;
+        public MasterController(IMasterService _MasterService)
         {
-            return View();
+            masterService = _MasterService;
+        }
+        
+        
+        [HttpPost("insertCompanyType")]
+        [Consumes("application/x-www-form-urlencoded")]
+        public IActionResult insertCompanyType([FromForm] Masters model)
+        {
+            try
+            {
+                var response = masterService.insertCompanyType(model);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
     }
 }
