@@ -79,13 +79,13 @@
         };
         System.Net.Http.HttpResponseMessage response = await Http.PostAsJsonAsync<dynamic>("api/Master/insertCompanyType", obj);
 
-       // var result = response.Content.ReadFromJsonAsync<ApiResponse>().Result;
-       // if (result.status == 1)
-        //{
+       var result = response.Content.ReadFromJsonAsync<CommonResponse>().Result;
+      if (result.status == 1)
+     {
             //mssg = "Save Sucessfully";
-         //   NavigationManager.NavigateTo("AddDesignation", true);
-          //  return;
-        //}
+          NavigationManager.NavigateTo("AddDesignation", true);
+          return;
+      }
 
     }
 
