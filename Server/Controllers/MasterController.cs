@@ -7,9 +7,9 @@ using BSM.Server.Service;
 using BSM.Shared.Model;
 namespace BSM.Server.Controllers
 {
-    [Route("api/Master")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class MasterController : ControllerBase
+    public class MasterController : Controller
     {
         private IMasterService masterService;
         public MasterController(IMasterService _MasterService)
@@ -18,6 +18,8 @@ namespace BSM.Server.Controllers
         }
         
         
+        
+       
         [HttpPost("insertCompanyType")]
         [Consumes("application/x-www-form-urlencoded")]
         public IActionResult insertCompanyType([FromForm] Masters model)
