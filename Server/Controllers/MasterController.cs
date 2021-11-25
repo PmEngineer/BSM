@@ -21,7 +21,7 @@ namespace BSM.Server.Controllers
         
        
         [HttpPost("insertCompanyType")]
-        [Consumes("application/x-www-form-urlencoded")]
+        [Consumes("application/json")]
         public IActionResult insertCompanyType([FromForm] Masters model)
         {
             try
