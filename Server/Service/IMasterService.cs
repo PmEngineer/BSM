@@ -31,12 +31,12 @@ namespace BSM.Server.Service
            
             pobj.DS.Tables[0].TableName = "CompanyType";
             string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
-
+            //List<Masters> masters = JsonConvert.DeserializeObject<List<Masters>>(json);
             return new CommonResponse()
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS
+                responseValue = json
             };
         }
 

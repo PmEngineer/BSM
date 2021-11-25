@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSM.Server", "Server\BSM.Server.csproj", "{5215B491-FE47-46DE-813D-18FCBD44D62F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BSM.Server", "Server\BSM.Server.csproj", "{5215B491-FE47-46DE-813D-18FCBD44D62F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSM.Client", "Client\BSM.Client.csproj", "{7D162646-49EC-4EB6-ADFB-B692D0D306DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BSM.Client", "Client\BSM.Client.csproj", "{7D162646-49EC-4EB6-ADFB-B692D0D306DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSM.Shared", "Shared\BSM.Shared.csproj", "{A235BA34-34D3-43DE-8675-398778DC4C8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BSM.Shared", "Shared\BSM.Shared.csproj", "{A235BA34-34D3-43DE-8675-398778DC4C8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

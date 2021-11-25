@@ -10,5 +10,6 @@ namespace BSM.Shared.Model
     {
         public String name { get; set; }
 
+
     }
 }

@@ -10,7 +10,7 @@ namespace BSM.Shared
 {
    public class Utility
     {
-        public SqlConnection connect = new SqlConnection(@"server=52.172.134.222;database=IMSET;user id=IMSETUser; Password=imset123@786;");
+        public SqlConnection connect = new SqlConnection(@"server=52.172.134.222;database=bsm;user id=corncall; Password=Criterion@123#;");
         public int UserId { get; set; }
         public int Id { get; set; }
         public int CreatedBy { get; set; }
