@@ -10,7 +10,7 @@ namespace BSM.Server.Service
    public interface IMasterService
     {
         CommonResponse insertCompanyType(Masters pobj);
-        CommonResponse showCompanyType(Masters pobj);
+        CommonResponse showCompanyType();
         CommonResponse updateComanyType(Masters pobj);
     }
     public class MasterService : IMasterService
@@ -40,8 +40,9 @@ namespace BSM.Server.Service
             };
         }
 
-        public CommonResponse showCompanyType(Masters pobj)
+        public CommonResponse showCompanyType()
         {
+            Masters pobj = new Masters();
             pobj.OpCode = 12;
             DalMaster.returnTable(pobj);
             if (pobj.IsException)
@@ -61,7 +62,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS
+                responseValue = json
             };
         }
 
