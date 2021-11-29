@@ -1,7 +1,7 @@
 ﻿@page "/CompanyType"
 @using BSM.Shared
 @inject HttpClient Http
-
+@using System.Data
 @using BSM.Shared.Model;
 
 <h4>Add Company Type</h4>
@@ -24,41 +24,41 @@
     <div class="col-sm-12">
         <div class="card mb-3">
             <div class="card-body">
-                @* @if (designationList == null)
-                    {
-                        <p style="color:red"><em>No Record Found</em></p>
-                    }
-                    else
-                    {
-                        <table id="myProjectTable" class="table table-hover align-middle mb-0" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>Sr No.</th>
-                                    <th>Designation Name</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if (designationList != null)
+                @if (companyList == null)
+                {
+                    <p style="color:red"><em>No Record Found</em></p>
+                }
+                else
+                {
+                    <table id="myProjectTable" class="table table-hover align-middle mb-0" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Sr No.</th>
+                                <th>Designation Name</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (companyList != null)
+                            {
+                                int j = 1;
+                                @foreach (DataRow dr in companyList.Rows)
                                 {
-                                    int j = 1;
-                                    @foreach (DataRow dr in designationList.Rows)
-                                    {
 
-                                        <tr>
-                                            <td>@j</td>
-                                            <td>@dr["designationName"].ToString()</td>
-                                            <td>
-                                                <a class="btn btn-info btn-sm">Edit</a>
-                                                <a class="btn btn-danger btn-sm" >Delete</a>
-                                            </td>
-                                        </tr>
-                                        j++;
-                                    }
+                                    <tr>
+                                        <td>@j</td>
+                                        <td>@dr["designationName"].ToString()</td>
+                                        <td>
+                                            <a class="btn btn-info btn-sm">Edit</a>
+                                            <a class="btn btn-danger btn-sm">Delete</a>
+                                        </td>
+                                    </tr>
+                                    j++;
                                 }
-                            </tbody>
-                        </table>
-                    }*@
+                            }
+                        </tbody>
+                    </table>
+                }
 
             </div>
         </div>
@@ -69,9 +69,17 @@
     @inject NavigationManager NavigationManager;
 
 
+    private DataTable companyList;
 
 
-   
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await Http.GetFromJsonAsync<CommonResponse>("api/Designation/GetAllDesignation");
+
+        companyList = Newtonsoft.Json.JsonConvert.DeserializeObject<DataTable>(response.responseValue.ToString());
+    }
+
+
     string cmpnyname;
     public async Task saveData()
     {
@@ -86,7 +94,7 @@
         if (result.status == 1)
         {
             //mssg = "Save Sucessfully";
-           // NavigationManager.NavigateTo("AddDesignation", true);
+            NavigationManager.NavigateTo("AddDesignation", true);
             return;
         }
 
