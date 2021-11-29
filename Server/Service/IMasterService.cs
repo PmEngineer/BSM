@@ -22,6 +22,18 @@ namespace BSM.Server.Service
         CommonResponse deleteCompany(Masters pobj);
         CommonResponse insertCompany(Masters pobj);
         CommonResponse getCompanyById(Masters pobj);
+        //Brand
+        CommonResponse showBrand();
+        CommonResponse updateBrand(Masters pobj);
+        CommonResponse deleteBrand(Masters pobj);
+        CommonResponse insertBrand(Masters pobj);
+        CommonResponse getBrandById(Masters pobj);
+        //Category
+        CommonResponse showCategory();
+        CommonResponse updateCategory(Masters pobj);
+        CommonResponse deleteCategory(Masters pobj);
+        CommonResponse insertCategory(Masters pobj);
+        CommonResponse getCategoryById(Masters pobj);
 
     }
     public class MasterService : IMasterService
@@ -62,7 +74,6 @@ namespace BSM.Server.Service
 
             pobj.DS.Tables[0].TableName = "Company";
             string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
-            //List<Masters> masters = JsonConvert.DeserializeObject<List<Masters>>(json);
             return new CommonResponse()
             {
                 status = 1,
@@ -87,7 +98,6 @@ namespace BSM.Server.Service
            
             pobj.DS.Tables[0].TableName = "CompanyType";
             string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
-            //List<Masters> masters = JsonConvert.DeserializeObject<List<Masters>>(json);
             return new CommonResponse()
             {
                 status = 1,
@@ -196,6 +206,175 @@ namespace BSM.Server.Service
                 message = "Success",
                 responseValue = pobj.DS
             };
+        }
+
+        public CommonResponse showBrand()
+        {
+            Masters pobj = new Masters();
+            pobj.OpCode = 18;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Brand";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = json
+            };
+        }
+
+        public CommonResponse updateBrand(Masters pobj)
+        {
+            pobj.OpCode = 19;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Brand";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS
+            };
+        }
+
+        public CommonResponse deleteBrand(Masters pobj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CommonResponse insertBrand(Masters pobj)
+        {
+            pobj.OpCode = 20;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Brand";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = json
+            };
+        }
+
+        public CommonResponse getBrandById(Masters pobj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CommonResponse showCategory()
+        {
+            Masters pobj = new Masters();
+            pobj.OpCode = 23;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Category";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = json
+            };
+        }
+
+        public CommonResponse updateCategory(Masters pobj)
+        {
+            pobj.OpCode = 26;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Category";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = json
+            };
+        }
+
+        public CommonResponse deleteCategory(Masters pobj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CommonResponse insertCategory(Masters pobj)
+        {
+            pobj.OpCode = 25;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Category";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = json
+            };
+        }
+
+        public CommonResponse getCategoryById(Masters pobj)
+        {
+            throw new NotImplementedException();
         }
     }
 }

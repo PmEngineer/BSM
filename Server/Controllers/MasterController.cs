@@ -108,7 +108,7 @@ namespace BSM.Server.Controllers
 
         }
         [HttpGet("showCompany")]
-        public IActionResult showCompany(Masters pobj)
+        public IActionResult showCompany()
         {
             try
             {
@@ -181,6 +181,91 @@ namespace BSM.Server.Controllers
             try
             {
                 var response = masterService.getCompanyById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("showCategory")]
+        public IActionResult showCategory()
+        {
+            try
+            {
+                var response = masterService.showCategory();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("updateCategory")]
+        public IActionResult updateCategory(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateCategory(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("deleteCategory")]
+        public IActionResult deleteCategory(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteCategory(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("insertCategory")]
+        public IActionResult insertCategory(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.insertCategory(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("getCategoryById")]
+        public IActionResult getCategoryById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getCategoryById(pobj);
 
                 if (response == null)
                     return BadRequest(new { message = "Data Not Insert" });
