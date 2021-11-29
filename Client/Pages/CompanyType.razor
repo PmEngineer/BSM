@@ -74,7 +74,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var response = await Http.GetFromJsonAsync<CommonResponse>("api/Designation/GetAllDesignation");
+        var response = await Http.GetFromJsonAsync<CommonResponse>("api/Master/showCompanyType");
 
         companyList = Newtonsoft.Json.JsonConvert.DeserializeObject<DataTable>(response.responseValue.ToString());
     }
