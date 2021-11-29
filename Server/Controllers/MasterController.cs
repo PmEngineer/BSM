@@ -57,7 +57,7 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpPost("updateCompanyType")
+        [HttpPost("updateCompanyType")]
             [Produces("application/json")]
         [Consumes("application/json")]
         public IActionResult updateCompanyType(Masters pobj)
@@ -520,7 +520,7 @@ namespace BSM.Server.Controllers
         {
             try
             {
-                var response = masterService.updateFinvancialYear(pobj);
+                var response = masterService.updateFinancialYear(pobj);
 
                 if (response == null)
                     return BadRequest(new { message = "Data Not Insert" });
