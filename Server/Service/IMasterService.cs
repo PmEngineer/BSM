@@ -9,9 +9,13 @@ namespace BSM.Server.Service
 {
    public interface IMasterService
     {
+        //CompanyType
         CommonResponse insertCompanyType(Masters pobj);
         CommonResponse showCompanyType();
         CommonResponse updateComanyType(Masters pobj);
+
+   
+
     }
     public class MasterService : IMasterService
     {
