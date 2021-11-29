@@ -40,6 +40,19 @@ namespace BSM.Server.Service
         CommonResponse deleteSubCategory(Masters pobj);
         CommonResponse insertSubCategory(Masters pobj);
         CommonResponse getSubCategoryById(Masters pobj);
+        //BillType
+        CommonResponse showBillType();
+        CommonResponse updateBillType(Masters pobj);
+        CommonResponse deleteBillType(Masters pobj);
+        CommonResponse insertBillType(Masters pobj);
+        CommonResponse getBillTypeById(Masters pobj);
+        //FinancialYear
+        CommonResponse showFinancialYear();
+        CommonResponse updateFinancialYear(Masters pobj);
+        CommonResponse deleteFinancialYear(Masters pobj);
+        CommonResponse insertFinancialYear(Masters pobj);
+        CommonResponse getFinancialYearById(Masters pobj);
+
 
     }
     public class MasterService : IMasterService
@@ -463,6 +476,174 @@ namespace BSM.Server.Service
         }
 
         public CommonResponse getSubCategoryById(Masters pobj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CommonResponse showBillType()
+        {
+            Masters pobj = new Masters();
+            pobj.OpCode = 33;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "BillType";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = json
+            };
+        }
+
+        public CommonResponse updateBillType(Masters pobj)
+        {
+            pobj.OpCode = 34;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "BillType";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = json
+            };
+        }
+
+        public CommonResponse deleteBillType(Masters pobj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CommonResponse insertBillType(Masters pobj)
+        {
+            pobj.OpCode = 37;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "BillType";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = json
+            };
+        }
+
+        public CommonResponse getBillTypeById(Masters pobj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CommonResponse showFinancialYear()
+        {
+            Masters pobj = new Masters();
+            pobj.OpCode = 39;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "FinancialYear";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = json
+            };
+        }
+
+        public CommonResponse updateFinancialYear(Masters pobj)
+        {
+            pobj.OpCode = 41;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "FinancialYear";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = json
+            };
+        }
+
+        public CommonResponse deleteFinancialYear(Masters pobj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CommonResponse insertFinancialYear(Masters pobj)
+        {
+            pobj.OpCode = 38;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "FinancialYear";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = json
+            };
+        }
+
+        public CommonResponse getFinancialYearById(Masters pobj)
         {
             throw new NotImplementedException();
         }

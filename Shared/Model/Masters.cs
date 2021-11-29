@@ -19,10 +19,10 @@ namespace BSM.Shared.Model
         public string email { get; set; }
         public string gst_number { get; set; }
         public int companyType_id { get; set; }  
-        public string category_name { get; set; }  
-        public int company_id { get; set; }  
-        public string subcategory_name { get; set; }  
-        public int category_id { get; set; }  
+        public DateTime StartDate { get; set; }  
+        public DateTime EndDate { get; set; }  
+               
+               
 
     }
 }

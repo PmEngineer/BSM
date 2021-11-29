@@ -21,7 +21,8 @@ namespace BSM.Server.Controllers
         
        
         [HttpPost("insertCompanyType")]
-        [Consumes("application/x-www-form-urlencoded")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult insertCompanyType([FromForm] Masters model)
         {
             try
@@ -56,7 +57,9 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("updateCompanyType")]
+        [HttpPost("updateCompanyType")
+            [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult updateCompanyType(Masters pobj)
         {
             try
@@ -73,7 +76,9 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("deleteCompanyType")]
+        [HttpPost("deleteCompanyType")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult deleteCompanyType(Masters pobj)
         {
             try
@@ -90,7 +95,9 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("getCompanyTypeById")]
+        [HttpPost("getCompanyTypeById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult getCompanyTypeById(Masters pobj)
         {
             try
@@ -108,6 +115,8 @@ namespace BSM.Server.Controllers
 
         }
         [HttpGet("showCompany")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult showCompany()
         {
             try
@@ -124,7 +133,9 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("updateCompany")]
+        [HttpPost("updateCompany")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult updateCompany(Masters pobj)
         {
             try
@@ -141,7 +152,9 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("deleteCompany")]
+        [HttpPost("deleteCompany")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult deleteCompany(Masters pobj)
         {
             try
@@ -158,7 +171,9 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("insertCompany")]
+        [HttpPost("insertCompany")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult insertCompany(Masters pobj)
         {
             try
@@ -175,7 +190,9 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("getCompanyById")]
+        [HttpPost("getCompanyById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult getCompanyById(Masters pobj)
         {
             try
@@ -193,6 +210,8 @@ namespace BSM.Server.Controllers
 
         }
         [HttpGet("showCategory")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult showCategory()
         {
             try
@@ -209,7 +228,9 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("updateCategory")]
+        [HttpPost("updateCategory")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult updateCategory(Masters pobj)
         {
             try
@@ -226,7 +247,9 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("deleteCategory")]
+        [HttpPost("deleteCategory")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult deleteCategory(Masters pobj)
         {
             try
@@ -243,7 +266,9 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("insertCategory")]
+        [HttpPost("insertCategory")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult insertCategory(Masters pobj)
         {
             try
@@ -260,7 +285,9 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("getCategoryById")]
+        [HttpPost("getCategoryById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult getCategoryById(Masters pobj)
         {
             try
@@ -278,6 +305,8 @@ namespace BSM.Server.Controllers
 
         }
         [HttpGet("showSubCategory")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult showSubCategory()
         {
             try
@@ -294,7 +323,9 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("updateSubCategory")]
+        [HttpPost("updateSubCategory")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult updateSubCategory(Masters pobj)
         {
             try
@@ -311,7 +342,9 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("deleteSubCategory")]
+        [HttpPost("deleteSubCategory")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult deleteSubCategory(Masters pobj)
         {
             try
@@ -328,7 +361,9 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("insertSubCategory")]
+        [HttpPost("insertSubCategory")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult insertSubCategory(Masters pobj)
         {
             try
@@ -345,12 +380,204 @@ namespace BSM.Server.Controllers
             }
 
         }
-        [HttpGet("getSubCategoryById")]
+        [HttpPost("getSubCategoryById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
         public IActionResult getSubCategoryById(Masters pobj)
         {
             try
             {
                 var response = masterService.getSubCategoryById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("showBillType")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult showBillType()
+        {
+            try
+            {
+                var response = masterService.showBillType();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("updateBillType")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult updateBillType(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateBillType(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("deleteBillType")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult deleteBillType(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteBillType(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("insertBillType")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult insertBillType(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.insertBillType(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("getBillTypeById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult getBillTypeById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getBillTypeById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("showFinancialYear")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult showFinancialYear()
+        {
+            try
+            {
+                var response = masterService.showFinancialYear();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("updateFinvancialYear")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult updateFinvancialYear(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateFinvancialYear(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("deleteFinancialYear")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult deleteFinancialYear(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteFinancialYear(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("insertFinancialYear")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult insertFinancialYear(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.insertFinancialYear(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("getFinancialYearById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult getFinancialYearById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getFinancialYearById(pobj);
 
                 if (response == null)
                     return BadRequest(new { message = "Data Not Insert" });
