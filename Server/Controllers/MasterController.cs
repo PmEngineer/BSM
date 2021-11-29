@@ -21,7 +21,7 @@ namespace BSM.Server.Controllers
         
        
         [HttpPost("insertCompanyType")]
-        [Consumes("application/json")]
+        [Consumes("application/x-www-form-urlencoded")]
         public IActionResult insertCompanyType([FromForm] Masters model)
         {
             try
@@ -36,6 +36,25 @@ namespace BSM.Server.Controllers
             {
                 return BadRequest(new { message = ex.Message });
             }
+        }
+
+
+        [HttpGet("showCompanyType")]
+        public IActionResult showCompanyType()
+        {
+            try
+            {
+                var response = masterService.showCompanyType();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
         }
     }
 }

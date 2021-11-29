@@ -69,6 +69,9 @@
     @inject NavigationManager NavigationManager;
 
 
+
+
+   
     string cmpnyname;
     public async Task saveData()
     {
@@ -83,10 +86,11 @@
         if (result.status == 1)
         {
             //mssg = "Save Sucessfully";
-           // NavigationManager.NavigateTo("CompanyType", true);
+            NavigationManager.NavigateTo("AddDesignation", true);
             return;
         }
 
     }
+
 
 }
