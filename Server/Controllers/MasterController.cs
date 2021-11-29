@@ -277,5 +277,90 @@ namespace BSM.Server.Controllers
             }
 
         }
+        [HttpGet("showSubCategory")]
+        public IActionResult showSubCategory()
+        {
+            try
+            {
+                var response = masterService.showSubCategory();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("updateSubCategory")]
+        public IActionResult updateSubCategory(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateSubCategory(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("deleteSubCategory")]
+        public IActionResult deleteSubCategory(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteSubCategory(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("insertSubCategory")]
+        public IActionResult insertSubCategory(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.insertSubCategory(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("getSubCategoryById")]
+        public IActionResult getSubCategoryById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getSubCategoryById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
     }
 }

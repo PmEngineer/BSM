@@ -34,6 +34,12 @@ namespace BSM.Server.Service
         CommonResponse deleteCategory(Masters pobj);
         CommonResponse insertCategory(Masters pobj);
         CommonResponse getCategoryById(Masters pobj);
+        //SubCategory
+        CommonResponse showSubCategory();
+        CommonResponse updateSubCategory(Masters pobj);
+        CommonResponse deleteSubCategory(Masters pobj);
+        CommonResponse insertSubCategory(Masters pobj);
+        CommonResponse getSubCategoryById(Masters pobj);
 
     }
     public class MasterService : IMasterService
@@ -373,6 +379,90 @@ namespace BSM.Server.Service
         }
 
         public CommonResponse getCategoryById(Masters pobj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CommonResponse showSubCategory()
+        {
+            Masters pobj = new Masters();
+            pobj.OpCode = 28;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "SubCategory";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = json
+            };
+        }
+
+        public CommonResponse updateSubCategory(Masters pobj)
+        {
+            pobj.OpCode = 30;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "SubCategory";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = json
+            };
+        }
+
+        public CommonResponse deleteSubCategory(Masters pobj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CommonResponse insertSubCategory(Masters pobj)
+        {
+            pobj.OpCode = 29;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "SubCategory";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = json
+            };
+        }
+
+        public CommonResponse getSubCategoryById(Masters pobj)
         {
             throw new NotImplementedException();
         }

@@ -21,6 +21,8 @@ namespace BSM.Shared.Model
         public int companyType_id { get; set; }  
         public string category_name { get; set; }  
         public int company_id { get; set; }  
+        public string subcategory_name { get; set; }  
+        public int category_id { get; set; }  
 
     }
 }
