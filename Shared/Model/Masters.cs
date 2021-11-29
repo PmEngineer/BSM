@@ -18,11 +18,11 @@ namespace BSM.Shared.Model
         public string phone_number { get; set; }
         public string email { get; set; }
         public string gst_number { get; set; }
-        public int companyType_id { get; set; }
-       
-        
-        
-
+        public int companyType_id { get; set; }  
+        public DateTime StartDate { get; set; }  
+        public DateTime EndDate { get; set; }  
+               
+               
 
     }
 }
