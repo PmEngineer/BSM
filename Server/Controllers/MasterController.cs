@@ -74,5 +74,124 @@ namespace BSM.Server.Controllers
             }
 
         }
+        [HttpGet("deleteCompanyType")]
+        public IActionResult deleteCompanyType(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteCompanyType(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("getCompanyTypeById")]
+        public IActionResult getCompanyTypeById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getCompanyTypeById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("showCompany")]
+        public IActionResult showCompany(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.showCompany();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("updateCompany")]
+        public IActionResult updateCompany(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateCompany(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("deleteCompany")]
+        public IActionResult deleteCompany(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteCompany(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("insertCompany")]
+        public IActionResult insertCompany(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.insertCompany(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("getCompanyById")]
+        public IActionResult getCompanyById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getCompanyById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
     }
 }
