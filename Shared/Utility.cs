@@ -19,6 +19,7 @@ namespace BSM.Shared
         public DataSet DS { get; set; }
         public bool IsException { get; set; }
         public string ExceptionMessage { get; set; }
+        public int companyId { get; set; }
     }
 
     public class CommonResponse

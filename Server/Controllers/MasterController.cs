@@ -56,5 +56,22 @@ namespace BSM.Server.Controllers
             }
 
         }
+        [HttpGet("updateCompanyType")]
+        public IActionResult updateCompanyType(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateCompanyType(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
     }
 }
