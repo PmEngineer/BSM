@@ -59,22 +59,98 @@ namespace BSM.Server.Service
     {
         public CommonResponse deleteCompany(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 18;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Company";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse deleteCompanyType(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 14;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "CompanyType";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse getCompanyById(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 20;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Company";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse getCompanyTypeById(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 15;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "CompanyType";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse insertCompany(Masters pobj)
@@ -280,7 +356,26 @@ namespace BSM.Server.Service
 
         public CommonResponse deleteBrand(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 21;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Brand";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse insertBrand(Masters pobj)
@@ -309,7 +404,26 @@ namespace BSM.Server.Service
 
         public CommonResponse getBrandById(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 22;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Brand";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse showCategory()
@@ -364,7 +478,26 @@ namespace BSM.Server.Service
 
         public CommonResponse deleteCategory(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 27;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Category";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse insertCategory(Masters pobj)
@@ -393,7 +526,26 @@ namespace BSM.Server.Service
 
         public CommonResponse getCategoryById(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 24;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Category";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse showSubCategory()
@@ -448,7 +600,26 @@ namespace BSM.Server.Service
 
         public CommonResponse deleteSubCategory(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 31;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "SubCategory";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse insertSubCategory(Masters pobj)
@@ -477,7 +648,26 @@ namespace BSM.Server.Service
 
         public CommonResponse getSubCategoryById(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 32;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "SubCategory";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse showBillType()
@@ -532,7 +722,26 @@ namespace BSM.Server.Service
 
         public CommonResponse deleteBillType(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 35;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "BillType";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse insertBillType(Masters pobj)
@@ -561,7 +770,26 @@ namespace BSM.Server.Service
 
         public CommonResponse getBillTypeById(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 36;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "BillType";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse showFinancialYear()
@@ -616,7 +844,26 @@ namespace BSM.Server.Service
 
         public CommonResponse deleteFinancialYear(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 40;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "FinancialYear";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse insertFinancialYear(Masters pobj)
@@ -645,7 +892,26 @@ namespace BSM.Server.Service
 
         public CommonResponse getFinancialYearById(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 39;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "FinancialYear";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
     }
 }
