@@ -29,6 +29,7 @@ namespace BSM.Shared.Dal
             cmd.Parameters.AddWithValue("@companyType_id", pobj.companyType_id);
             cmd.Parameters.AddWithValue("@StartDate", pobj.StartDate);
             cmd.Parameters.AddWithValue("@EndDate", pobj.EndDate);
+            cmd.Parameters.AddWithValue("@url", pobj.url);
             cmd.Parameters.AddWithValue("@CreatedBy", pobj.CreatedBy);
             cmd.Parameters.AddWithValue("@opCode", pobj.OpCode);
             cmd.Parameters.Add("@isException", SqlDbType.Bit);

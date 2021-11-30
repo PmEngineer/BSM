@@ -53,6 +53,18 @@ namespace BSM.Server.Service
         CommonResponse insertFinancialYear(Masters pobj);
         CommonResponse getFinancialYearById(Masters pobj);
 
+        //MenuMaster
+        CommonResponse showMenuMaster();
+        CommonResponse updateMenuMaster(Masters pobj);
+        CommonResponse deleteMenuMaster(Masters pobj);
+        CommonResponse insertMenuMaster(Masters pobj);
+        CommonResponse getMenuMasterById(Masters pobj);
+        //SubMenuMaster
+        CommonResponse showSubMenuMaster();
+        CommonResponse updateSubMenuMaster(Masters pobj);
+        CommonResponse deleteSubMenuMaster(Masters pobj);
+        CommonResponse insertSubMenuMaster(Masters pobj);
+        CommonResponse getSubMenuMasterById(Masters pobj);
 
     }
     public class MasterService : IMasterService
@@ -795,7 +807,7 @@ namespace BSM.Server.Service
         public CommonResponse showFinancialYear()
         {
             Masters pobj = new Masters();
-            pobj.OpCode = 39;
+            pobj.OpCode = 42;
             DalMaster.returnTable(pobj);
             if (pobj.IsException)
             {
@@ -905,6 +917,253 @@ namespace BSM.Server.Service
             }
 
             pobj.DS.Tables[0].TableName = "FinancialYear";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse showMenuMaster()
+        {
+            Masters pobj = new Masters();
+            pobj.OpCode = 43;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "MenuMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse updateMenuMaster(Masters pobj)
+        {
+            pobj.OpCode = 46;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "MenuMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse deleteMenuMaster(Masters pobj)
+        {
+            pobj.OpCode = 45;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "MenuMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+
+        }
+
+        public CommonResponse insertMenuMaster(Masters pobj)
+        {
+            pobj.OpCode = 44;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "MenuMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse getMenuMasterById(Masters pobj)
+        {
+            pobj.OpCode = 47;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "MenuMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        
+
+        public CommonResponse showSubMenuMaster()
+        {
+            Masters pobj = new Masters();
+            pobj.OpCode = 48;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "SubMenuMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse updateSubMenuMaster(Masters pobj)
+        {
+            pobj.OpCode = 51;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "SubMenuMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse deleteSubMenuMaster(Masters pobj)
+        {
+            pobj.OpCode = 50;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "SubMenuMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse insertSubMenuMaster(Masters pobj)
+        {
+            pobj.OpCode = 49;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "SubMenuMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse getSubMenuMasterById(Masters pobj)
+        {
+            pobj.OpCode = 52;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "SubMenuMaster";
             string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
             return new CommonResponse()
             {
