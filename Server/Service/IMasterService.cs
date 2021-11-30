@@ -97,7 +97,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -121,7 +121,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -147,7 +147,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -173,7 +173,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -198,7 +198,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -223,7 +223,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -249,7 +249,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -274,7 +274,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -303,7 +303,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -334,7 +334,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -358,7 +358,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -387,7 +387,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -418,7 +418,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -442,7 +442,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -471,7 +471,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -502,7 +502,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -526,7 +526,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -555,7 +555,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -586,7 +586,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -610,7 +610,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
@@ -639,7 +639,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = json
+                responseValue = pobj.DS.Tables[0]
             };
         }
 
