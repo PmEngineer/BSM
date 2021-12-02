@@ -872,5 +872,99 @@ namespace BSM.Server.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+        [HttpGet("showUnitMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult showUnitMaster()
+        {
+            try
+            {
+                var response = masterService.showUnitMaster();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("updateUnitMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult updateUnitMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateUnitMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("deleteUnitMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult deleteUnitMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteUnitMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("insertUnitMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult insertUnitMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.insertUnitMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("getUnitMasterById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult getUnitMasterById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getUnitMasterById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
     }
 }
