@@ -266,10 +266,9 @@ namespace BSM.Server.Service
 
                 };
             }
-
+          
             pobj.DS.Tables[0].TableName = "CompanyType";
             string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
-
             return new CommonResponse()
             {
                 status = 1,

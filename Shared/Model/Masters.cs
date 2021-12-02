@@ -19,8 +19,8 @@ namespace BSM.Shared.Model
         public string email { get; set; }
         public string gst_number { get; set; }
         public int companyType_id { get; set; }  
-        public DateTime StartDate { get; set; }  
-        public DateTime EndDate { get; set; }  
+        public DateTime ? StartDate { get; set; }  
+        public DateTime ? EndDate { get; set; }  
         public string url { get; set; }  
         public int menu_id { get; set; }  
         public int dependent_unit_id { get; set; }  
