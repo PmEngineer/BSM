@@ -957,5 +957,98 @@ namespace BSM.Server.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+        [HttpGet("showWarehouses")]
+
+        public IActionResult showWarehouses()
+        {
+            try
+            {
+                var response = masterService.showWarehouses();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Show" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("updateWarehouses")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult updateWarehouses(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateWarehouses(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Update" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("deleteWarehouses")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult deleteWarehouses(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteWarehouses(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Delete" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("insertWarehouses")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult insertWarehouses(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.insertWarehouses(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("getWarehousesById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult getWarehousesById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getWarehousesById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Get" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
     }
 }

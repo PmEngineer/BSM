@@ -24,6 +24,7 @@ namespace BSM.Shared.Model
         public string url { get; set; }  
         public int menu_id { get; set; }  
         public int dependent_unit_id { get; set; }  
+        public string Location { get; set; }  
                
                
 

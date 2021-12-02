@@ -79,6 +79,13 @@ namespace BSM.Server.Service
         CommonResponse deleteUnitMaster(Masters pobj);
         CommonResponse insertUnitMaster(Masters pobj);
         CommonResponse getUnitMasterById(Masters pobj);
+
+        //Warehouses
+        CommonResponse showWarehouses();
+        CommonResponse updateWarehouses(Masters pobj);
+        CommonResponse deleteWarehouses(Masters pobj);
+        CommonResponse insertWarehouses(Masters pobj);
+        CommonResponse getWarehousesById(Masters pobj);
     }
     public class MasterService : IMasterService
     {
@@ -1420,6 +1427,128 @@ namespace BSM.Server.Service
             }
 
             pobj.DS.Tables[0].TableName = "UnitMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse showWarehouses()
+        {
+            Masters pobj = new Masters();
+            pobj.OpCode = 66;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Warehouses";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse updateWarehouses(Masters pobj)
+        {
+            pobj.OpCode = 68;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Warehouses";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse deleteWarehouses(Masters pobj)
+        {
+            pobj.OpCode = 67;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Warehouses";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse insertWarehouses(Masters pobj)
+        {
+            pobj.OpCode = 70;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Warehouses";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse getWarehousesById(Masters pobj)
+        {
+            pobj.OpCode = 69;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Warehouses";
             string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
             return new CommonResponse()
             {
