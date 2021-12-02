@@ -1,0 +1,117 @@
+﻿@page "/SubCategory"
+@using BSM.Shared
+@inject HttpClient Http
+@using System.Data
+@using BSM.Shared.Model;
+
+<h4>Add Sub Category</h4>
+<br>
+<br>
+
+<div class="body d-flex py-lg-3 py-md-2">
+    <div class="container-xxl">
+
+        <div class="row align-items-center">
+
+            <div class="col-md-4">
+                <label for="exampleFormControlTextarea78d" class="form-label">Sub Category Name</label>
+                <input type="text" @bind="subcatname" class="form-control" />
+
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary" @onclick="saveData">Save</button>
+            </div>
+        </div>
+
+        <br /> <br />
+
+        <div class="row align-items-center">
+
+        </div> <!-- Row end  -->
+        <div class="row clearfix g-3">
+            <div class="col-sm-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        @if (subcategoryList == null)
+                        {
+                            <p style="color:red"><em>No Record Found</em></p>
+                        }
+                        else
+                        {
+                            <table id="myProjectTable" class="table table-hover align-middle mb-0" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Sr No.</th>
+                                        <th>Designation Name</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (subcategoryList != null)
+                                    {
+                                        int j = 1;
+                                        @foreach (DataRow dr in subcategoryList.Rows)
+                                        {
+
+                                            <tr>
+                                                <td>@j</td>
+                                                <td>@dr["designationName"].ToString()</td>
+                                                <td>
+                                                    <a class="btn btn-info btn-sm">Edit</a>
+                                                    <a class="btn btn-danger btn-sm">Delete</a>
+                                                </td>
+                                            </tr>
+                                            j++;
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- Row End -->
+    </div>
+</div>
+
+
+
+@code {
+    @inject NavigationManager NavigationManager;
+
+
+    private DataTable subcategoryList;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await Http.GetFromJsonAsync<CommonResponse>("api/Master/showSubCategory");
+
+        subcategoryList = Newtonsoft.Json.JsonConvert.DeserializeObject<DataTable>(response.responseValue.ToString());
+    }
+
+
+    string subcatname;
+    public async Task saveData()
+    {
+        var obj = new
+        {
+            name = subcatname,
+
+        };
+        System.Net.Http.HttpResponseMessage response = await Http.PostAsJsonAsync<dynamic>("api/Master/insertSubCategory", obj);
+
+        var result = response.Content.ReadFromJsonAsync<CommonResponse>().Result;
+        if (result.status == 1)
+        {
+            //mssg = "Save Sucessfully";
+            NavigationManager.NavigateTo("SubCategory", true);
+            return;
+        }
+
+    }
+
+
+}
