@@ -1,10 +1,10 @@
-﻿@page "/CompanyType"
+﻿@page "/FinancialYear"
 @using BSM.Shared
 @inject HttpClient Http
 @using System.Data
 @using BSM.Shared.Model;
 
-<h4>Add Company Type</h4>
+<h4>Add FinancialYear</h4>
 <br>
 <br>
 
@@ -14,8 +14,8 @@
         <div class="row align-items-center">
 
             <div class="col-md-4">
-                <label for="exampleFormControlTextarea78d" class="form-label">Company Type Name</label>
-                <input type="text" @bind="cmpnyname" class="form-control" />
+                <label for="exampleFormControlTextarea78d" class="form-label">Financial Year Name</label>
+                <input type="text" @bind="financialyear" class="form-control" />
 
             </div>
             <div class="col-md-4">
@@ -33,7 +33,7 @@
             <div class="col-sm-12">
                 <div class="card mb-3">
                     <div class="card-body">
-                        @if (companyList == null)
+                        @if (financialyearList == null)
                         {
                             <p style="color:red"><em>No Record Found</em></p>
                         }
@@ -43,20 +43,20 @@
                                 <thead>
                                     <tr>
                                         <th>Sr No.</th>
-                                        <th>Company Type Name</th>
+                                        <th>Designation Name</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if (companyList != null)
+                                    @if (financialyearList != null)
                                     {
                                         int j = 1;
-                                        @foreach (DataRow dr in companyList.Rows)
+                                        @foreach (DataRow dr in financialyearList.Rows)
                                         {
 
                                             <tr>
                                                 <td>@j</td>
-                                                <td>@dr["typename"].ToString()</td>
+                                                <td>@dr["designationName"].ToString()</td>
                                                 <td>
                                                     <a class="btn btn-info btn-sm">Edit</a>
                                                     <a class="btn btn-danger btn-sm">Delete</a>
@@ -82,32 +82,32 @@
     @inject NavigationManager NavigationManager;
 
 
-    private DataTable companyList;
+    private DataTable financialyearList;
 
 
     protected override async Task OnInitializedAsync()
     {
-        var response = await Http.GetFromJsonAsync<CommonResponse>("api/Master/showCompanyType");
+        var response = await Http.GetFromJsonAsync<CommonResponse>("api/Master/showFinancialYear");
 
-        companyList = Newtonsoft.Json.JsonConvert.DeserializeObject<DataTable>(response.responseValue.ToString());
+        financialyearList = Newtonsoft.Json.JsonConvert.DeserializeObject<DataTable>(response.responseValue.ToString());
     }
 
 
-    string cmpnyname;
+    string financialyear;
     public async Task saveData()
     {
         var obj = new
         {
-            name = cmpnyname,
+            name = financialyear,
 
         };
-        System.Net.Http.HttpResponseMessage response = await Http.PostAsJsonAsync<dynamic>("api/Master/insertCompanyType", obj);
+        System.Net.Http.HttpResponseMessage response = await Http.PostAsJsonAsync<dynamic>("api/Master/insertFinancialYear", obj);
 
         var result = response.Content.ReadFromJsonAsync<CommonResponse>().Result;
         if (result.status == 1)
         {
             //mssg = "Save Sucessfully";
-           // NavigationManager.NavigateTo("CompanyType", true);
+            NavigationManager.NavigateTo("FinancialYear", true);
             return;
         }
 
