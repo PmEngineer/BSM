@@ -585,7 +585,7 @@ namespace BSM.Server.Controllers
 
         }
         [HttpGet("showMenuMaster")]
-        \
+        
         public IActionResult showMenuMaster()
         {
             try
