@@ -33,7 +33,7 @@
             <div class="col-sm-12">
                 <div class="card mb-3">
                     <div class="card-body">
-                        @if (companyList == null)
+                        @if (brandList == null)
                         {
                             <p style="color:red"><em>No Record Found</em></p>
                         }
@@ -43,15 +43,15 @@
                                 <thead>
                                     <tr>
                                         <th>Sr No.</th>
-                                        <th>Designation Name</th>
+                                        <th>Brand Name</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if (companyList != null)
+                                    @if (brandList != null)
                                     {
                                         int j = 1;
-                                        @foreach (DataRow dr in companyList.Rows)
+                                        @foreach (DataRow dr in brandList.Rows)
                                         {
 
                                             <tr>
@@ -82,14 +82,14 @@
     @inject NavigationManager NavigationManager;
 
 
-    private DataTable companyList;
+    private DataTable brandList;
 
 
     protected override async Task OnInitializedAsync()
     {
-        var response = await Http.GetFromJsonAsync<CommonResponse>("api/Master/showCompanyType");
+        var response = await Http.GetFromJsonAsync<CommonResponse>("api/Master/showBrand");
 
-        companyList = Newtonsoft.Json.JsonConvert.DeserializeObject<DataTable>(response.responseValue.ToString());
+        brandList = Newtonsoft.Json.JsonConvert.DeserializeObject<DataTable>(response.responseValue.ToString());
     }
 
 
@@ -101,7 +101,7 @@
             name = brandname,
 
         };
-        System.Net.Http.HttpResponseMessage response = await Http.PostAsJsonAsync<dynamic>("api/Master/insertCompanyType", obj);
+        System.Net.Http.HttpResponseMessage response = await Http.PostAsJsonAsync<dynamic>("api/Master/insertBrand", obj);
 
         var result = response.Content.ReadFromJsonAsync<CommonResponse>().Result;
         if (result.status == 1)
