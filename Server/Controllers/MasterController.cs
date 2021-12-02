@@ -1050,5 +1050,98 @@ namespace BSM.Server.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+        [HttpGet("showAssignMenuToRole")]
+
+        public IActionResult showAssignMenuToRole()
+        {
+            try
+            {
+                var response = masterService.showAssignMenuToRole();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Show" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("updateAssignMenuToRole")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult updateAssignMenuToRole(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateAssignMenuToRole(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Update" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("deleteAssignMenuToRole")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult deleteAssignMenuToRole(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteAssignMenuToRole(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Delete" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("insertAssignMenuToRole")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult insertAssignMenuToRole(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.insertAssignMenuToRole(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("getAssignMenuToRoleById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult getAssignMenuToRoleById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getAssignMenuToRoleById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Get" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
     }
 }
