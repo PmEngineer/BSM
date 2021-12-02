@@ -30,6 +30,8 @@ namespace BSM.Shared.Dal
             cmd.Parameters.AddWithValue("@StartDate", pobj.StartDate);
             cmd.Parameters.AddWithValue("@EndDate", pobj.EndDate);
             cmd.Parameters.AddWithValue("@url", pobj.url);
+            cmd.Parameters.AddWithValue("@dependent_unit_id", pobj.dependent_unit_id);
+            cmd.Parameters.AddWithValue("@Location", pobj.Location);
             cmd.Parameters.AddWithValue("@CreatedBy", pobj.CreatedBy);
             cmd.Parameters.AddWithValue("@opCode", pobj.OpCode);
             cmd.Parameters.Add("@isException", SqlDbType.Bit);

@@ -48,7 +48,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.showCompanyType();
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Show" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -67,7 +67,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.updateCompanyType(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Update" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -86,7 +86,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.deleteCompanyType(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Delete" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -105,7 +105,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.getCompanyTypeById(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Get" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -115,8 +115,7 @@ namespace BSM.Server.Controllers
 
         }
         [HttpGet("showCompany")]
-        [Produces("application/json")]
-        [Consumes("application/json")]
+        
         public IActionResult showCompany()
         {
             try
@@ -124,7 +123,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.showCompany();
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Show" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -143,7 +142,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.updateCompany(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Update" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -162,7 +161,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.deleteCompany(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Delete" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -200,7 +199,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.getCompanyById(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Get" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -210,8 +209,7 @@ namespace BSM.Server.Controllers
 
         }
         [HttpGet("showCategory")]
-        [Produces("application/json")]
-        [Consumes("application/json")]
+        
         public IActionResult showCategory()
         {
             try
@@ -219,7 +217,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.showCategory();
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Show" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -238,7 +236,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.updateCategory(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Update" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -257,7 +255,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.deleteCategory(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Delete" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -295,7 +293,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.getCategoryById(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Get" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -305,8 +303,7 @@ namespace BSM.Server.Controllers
 
         }
         [HttpGet("showSubCategory")]
-        [Produces("application/json")]
-        [Consumes("application/json")]
+        
         public IActionResult showSubCategory()
         {
             try
@@ -314,7 +311,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.showSubCategory();
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Show" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -333,7 +330,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.updateSubCategory(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Update" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -352,7 +349,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.deleteSubCategory(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Delete" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -390,7 +387,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.getSubCategoryById(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Get" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -400,8 +397,7 @@ namespace BSM.Server.Controllers
 
         }
         [HttpGet("showBillType")]
-        [Produces("application/json")]
-        [Consumes("application/json")]
+       
         public IActionResult showBillType()
         {
             try
@@ -409,7 +405,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.showBillType();
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Show" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -428,7 +424,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.updateBillType(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Update" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -447,7 +443,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.deleteBillType(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Delete" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -485,7 +481,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.getBillTypeById(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Get" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -495,8 +491,7 @@ namespace BSM.Server.Controllers
 
         }
         [HttpGet("showFinancialYear")]
-        [Produces("application/json")]
-        [Consumes("application/json")]
+       
         public IActionResult showFinancialYear()
         {
             try
@@ -504,7 +499,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.showFinancialYear();
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Show" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -523,7 +518,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.updateFinancialYear(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Update" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -542,7 +537,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.deleteFinancialYear(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Delete" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -580,7 +575,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.getFinancialYearById(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Get" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -590,8 +585,7 @@ namespace BSM.Server.Controllers
 
         }
         [HttpGet("showMenuMaster")]
-        [Produces("application/json")]
-        [Consumes("application/json")]
+        \
         public IActionResult showMenuMaster()
         {
             try
@@ -599,7 +593,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.showMenuMaster();
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Show" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -618,7 +612,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.updateMenuMaster(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Update" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -637,7 +631,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.deleteMenuMaster(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Delete" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -675,7 +669,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.getMenuMasterById(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Get" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -685,8 +679,7 @@ namespace BSM.Server.Controllers
 
         }
         [HttpGet("showSubMenuMaster")]
-        [Produces("application/json")]
-        [Consumes("application/json")]
+        
         public IActionResult showSubMenuMaster()
         {
             try
@@ -694,7 +687,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.showSubMenuMaster();
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Show" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -713,7 +706,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.updateSubMenuMaster(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Update" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -732,7 +725,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.deleteSubMenuMaster(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Delete" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -770,7 +763,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.getSubMenuMasterById(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Get" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -779,8 +772,7 @@ namespace BSM.Server.Controllers
             }
         }
         [HttpGet("showRoleMaster")]
-        [Produces("application/json")]
-        [Consumes("application/json")]
+        
         public IActionResult showRoleMaster()
         {
             try
@@ -788,7 +780,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.showRoleMaster();
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Show" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -807,7 +799,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.updateRoleMaster(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Update" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -826,7 +818,7 @@ namespace BSM.Server.Controllers
                 var response = masterService.deleteRoleMaster(pobj);
 
                 if (response == null)
-                    return BadRequest(new { message = "Data Not Insert" });
+                    return BadRequest(new { message = "Data Not Delete" });
                 return Ok(response);
             }
             catch (Exception ex)
@@ -864,7 +856,193 @@ namespace BSM.Server.Controllers
                 var response = masterService.getRoleMasterById(pobj);
 
                 if (response == null)
+                    return BadRequest(new { message = "Data Not Get" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+        [HttpGet("showUnitMaster")]
+       
+        public IActionResult showUnitMaster()
+        {
+            try
+            {
+                var response = masterService.showUnitMaster();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Show" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("updateUnitMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult updateUnitMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateUnitMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Update" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("deleteUnitMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult deleteUnitMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteUnitMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Delete" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("insertUnitMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult insertUnitMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.insertUnitMaster(pobj);
+
+                if (response == null)
                     return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("getUnitMasterById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult getUnitMasterById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getUnitMasterById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Get" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+        [HttpGet("showWarehouses")]
+
+        public IActionResult showWarehouses()
+        {
+            try
+            {
+                var response = masterService.showWarehouses();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Show" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("updateWarehouses")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult updateWarehouses(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateWarehouses(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Update" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("deleteWarehouses")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult deleteWarehouses(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteWarehouses(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Delete" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("insertWarehouses")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult insertWarehouses(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.insertWarehouses(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("getWarehousesById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult getWarehousesById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getWarehousesById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Get" });
                 return Ok(response);
             }
             catch (Exception ex)
