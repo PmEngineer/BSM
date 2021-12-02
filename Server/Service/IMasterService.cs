@@ -59,7 +59,26 @@ namespace BSM.Server.Service
     {
         public CommonResponse deleteCompany(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 18;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Company";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse deleteCompanyType(Masters pobj)
@@ -69,7 +88,26 @@ namespace BSM.Server.Service
 
         public CommonResponse getCompanyById(Masters pobj)
         {
-            throw new NotImplementedException();
+            pobj.OpCode = 20;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "Company";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
         }
 
         public CommonResponse getCompanyTypeById(Masters pobj)
