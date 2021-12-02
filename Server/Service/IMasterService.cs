@@ -86,6 +86,13 @@ namespace BSM.Server.Service
         CommonResponse deleteWarehouses(Masters pobj);
         CommonResponse insertWarehouses(Masters pobj);
         CommonResponse getWarehousesById(Masters pobj);
+
+        //AssignMenuToRole
+        CommonResponse showAssignMenuToRole();
+        CommonResponse updateAssignMenuToRole(Masters pobj);
+        CommonResponse deleteAssignMenuToRole(Masters pobj);
+        CommonResponse insertAssignMenuToRole(Masters pobj);
+        CommonResponse getAssignMenuToRoleById(Masters pobj);
     }
     public class MasterService : IMasterService
     {
@@ -205,7 +212,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS.Tables[0]
+                responseValue = json
             };
         }
 
@@ -429,7 +436,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS.Tables[0]
+                responseValue = json
             };
         }
 
@@ -551,7 +558,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS.Tables[0]
+                responseValue = json
             };
         }
 
@@ -673,7 +680,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS.Tables[0]
+                responseValue = json
             };
         }
 
@@ -795,7 +802,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS.Tables[0]
+                responseValue = json
             };
         }
 
@@ -917,7 +924,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS.Tables[0]
+                responseValue = json
             };
         }
 
@@ -1040,7 +1047,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS.Tables[0]
+                responseValue = json
             };
         }
 
@@ -1164,7 +1171,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS.Tables[0]
+                responseValue = json
             };
         }
 
@@ -1286,7 +1293,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS.Tables[0]
+                responseValue = json
             };
         }
 
@@ -1408,7 +1415,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS.Tables[0]
+                responseValue = json
             };
         }
 
@@ -1530,7 +1537,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS.Tables[0]
+                responseValue = json
             };
         }
 
@@ -1556,6 +1563,31 @@ namespace BSM.Server.Service
                 message = "Success",
                 responseValue = pobj.DS.Tables[0]
             };
+        }
+
+        public CommonResponse showAssignMenuToRole()
+        {
+            throw new NotImplementedException();
+        }
+
+        public CommonResponse updateAssignMenuToRole(Masters pobj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CommonResponse deleteAssignMenuToRole(Masters pobj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CommonResponse insertAssignMenuToRole(Masters pobj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CommonResponse getAssignMenuToRoleById(Masters pobj)
+        {
+            throw new NotImplementedException();
         }
     }
 }
