@@ -216,7 +216,7 @@ namespace BSM.Server.Service
             {
                 status = 1,
                 message = "Success",
-                responseValue = pobj.DS.Tables[0]
+                responseValue = json
             };
         }
 
