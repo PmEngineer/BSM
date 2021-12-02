@@ -21,6 +21,8 @@ namespace BSM.Shared.Model
         public int companyType_id { get; set; }  
         public DateTime StartDate { get; set; }  
         public DateTime EndDate { get; set; }  
+        public string url { get; set; }  
+        public int menu_id { get; set; }  
                
                
 

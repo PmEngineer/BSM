@@ -589,5 +589,288 @@ namespace BSM.Server.Controllers
             }
 
         }
+        [HttpGet("showMenuMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult showMenuMaster()
+        {
+            try
+            {
+                var response = masterService.showMenuMaster();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("updateMenuMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult updateMenuMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateMenuMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("deleteMenuMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult deleteMenuMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteMenuMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("insertMenuMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult insertMenuMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.insertMenuMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("getMenuMasterById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult getMenuMasterById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getMenuMasterById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpGet("showSubMenuMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult showSubMenuMaster()
+        {
+            try
+            {
+                var response = masterService.showSubMenuMaster();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("updateSubMenuMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult updateSubMenuMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateSubMenuMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("deleteSubMenuMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult deleteSubMenuMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteSubMenuMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("insertSubMenuMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult insertSubMenuMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.insertSubMenuMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("getSubMenuMasterById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult getSubMenuMasterById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getSubMenuMasterById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+        [HttpGet("showRoleMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult showRoleMaster()
+        {
+            try
+            {
+                var response = masterService.showRoleMaster();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("updateRoleMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult updateRoleMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateRoleMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("deleteRoleMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult deleteRoleMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteRoleMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("insertRoleMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult insertRoleMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.insertRoleMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("getRoleMasterById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult getRoleMasterById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getRoleMasterById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
     }
 }
