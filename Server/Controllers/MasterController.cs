@@ -778,5 +778,99 @@ namespace BSM.Server.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+        [HttpGet("showRoleMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult showRoleMaster()
+        {
+            try
+            {
+                var response = masterService.showRoleMaster();
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("updateRoleMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult updateRoleMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.updateRoleMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("deleteRoleMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult deleteRoleMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.deleteRoleMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("insertRoleMaster")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult insertRoleMaster(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.insertRoleMaster(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
+        [HttpPost("getRoleMasterById")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public IActionResult getRoleMasterById(Masters pobj)
+        {
+            try
+            {
+                var response = masterService.getRoleMasterById(pobj);
+
+                if (response == null)
+                    return BadRequest(new { message = "Data Not Insert" });
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
     }
 }
