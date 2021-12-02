@@ -66,6 +66,13 @@ namespace BSM.Server.Service
         CommonResponse insertSubMenuMaster(Masters pobj);
         CommonResponse getSubMenuMasterById(Masters pobj);
 
+        //RoleMaster
+        CommonResponse showRoleMaster();
+        CommonResponse updateRoleMaster(Masters pobj);
+        CommonResponse deleteRoleMaster(Masters pobj);
+        CommonResponse insertRoleMaster(Masters pobj);
+        CommonResponse getRoleMasterById(Masters pobj);
+
     }
     public class MasterService : IMasterService
     {
@@ -1164,6 +1171,128 @@ namespace BSM.Server.Service
             }
 
             pobj.DS.Tables[0].TableName = "SubMenuMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse showRoleMaster()
+        {
+            Masters pobj = new Masters();
+            pobj.OpCode = 53;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "RoleMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse updateRoleMaster(Masters pobj)
+        {
+            pobj.OpCode = 56;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "RoleMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse deleteRoleMaster(Masters pobj)
+        {
+            pobj.OpCode = 55;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "RoleMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse insertRoleMaster(Masters pobj)
+        {
+            pobj.OpCode = 54;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "RoleMaster";
+            string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
+            return new CommonResponse()
+            {
+                status = 1,
+                message = "Success",
+                responseValue = pobj.DS.Tables[0]
+            };
+        }
+
+        public CommonResponse getRoleMasterById(Masters pobj)
+        {
+            pobj.OpCode = 57;
+            DalMaster.returnTable(pobj);
+            if (pobj.IsException)
+            {
+                return new CommonResponse()
+                {
+                    status = 0,
+                    message = pobj.ExceptionMessage,
+
+                };
+            }
+
+            pobj.DS.Tables[0].TableName = "RoleMaster";
             string json = JsonConvert.SerializeObject(pobj.DS, Formatting.None);
             return new CommonResponse()
             {
