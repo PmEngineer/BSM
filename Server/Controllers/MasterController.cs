@@ -23,7 +23,7 @@ namespace BSM.Server.Controllers
         [HttpPost("insertCompanyType")]
         [Produces("application/json")]
         [Consumes("application/json")]
-        public IActionResult insertCompanyType([FromForm] Masters model)
+        public IActionResult insertCompanyType( Masters model)
         {
             try
             {
