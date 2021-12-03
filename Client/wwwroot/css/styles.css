@@ -4108,6 +4108,31 @@ span.arrow.icofont-dotted-down.ms-auto.text-end.fs-5 i {
     padding: 15px;
     height: 87%;
 }
+.actionbtn .fa-trash-alt {
+    color: #ffffff;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    background: #ab1515;
+    text-align: center;
+    font-size: 13px;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor:pointer;
+}
+
+.actionbtn .fa-edit {
+    color: #ffffff;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    background: #1da550;
+    text-align: center;
+    font-size: 13px;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer;
+}
 
     .sidebar a {
         color: #fff;
