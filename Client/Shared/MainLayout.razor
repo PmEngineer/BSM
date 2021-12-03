@@ -1,37 +1,26 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    @*<div class="sidebar">
-        <NavMenu />
-    </div>*@
 
+
+
+<div class="page">
+    
     <div class="main">
         <div class="bg-opacity">
             <div class="header">
 
                 <div class="header-left">
-                    <a href="Index" class="logo"><img src="images/BMSlogo7.png" alt="Logo"></a>
-                    <a href="Index" class="logo logo-small"><img src="images/smalllogo.png" alt="Logo" width="30" height="30"></a>
+                    <a href="#" class="logo"><img src="images/BMSlogo7.png" alt="Logo"></a>
+                    <a href="#" class="logo logo-small"><img src="images/smalllogo.png" alt="Logo" width="30" height="30"></a>
                 </div>
 
-                <a href="javascript:void(0);" id="toggle_btn"><i class="fas fa-bars"></i></a>
-                <a class="mobile_btn" id="mobile_btn"><i class="fas fa-bars"></i></a>
+                @*<a href="javascript:void(0);" id="toggle_btn"><i class="fas fa-bars"></i></a>*@
+                <a class="mobile_btn" id="mobile_btn" onclick="myFunction()"><i class="fas fa-bars"></i></a>
 
 
                 <ul class="nav nav-tabs user-menu">
-                    <li class="nav-item dropdown has-arrow main-drop">
-                        <a href="javascript:void(0);" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-                            <span class="user-img">
-                                <img src="assets/img/profiles/avatar-01.jpg" alt="">
-                                <span class="status online"></span>
-                            </span>
-                            <span>Admin</span>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#"><i data-feather="user" class="me-1"></i> Profile</a>
-                            <a class="dropdown-item" href="#"><i data-feather="settings" class="me-1"></i> Settings</a>
-                            <a class="dropdown-item" href="#"><i data-feather="log-out" class="me-1"></i> Logout</a>
-                        </div>
+                    <li class="nav-item">
+                        <a href="javascript:void(0);"><span class="noti"><i class="fas fa-bell"></i></span></a> 
                     </li>
                 </ul>
 
@@ -76,3 +65,6 @@
         </div>
     </div>
 </div>*@
+
+
+

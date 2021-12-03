@@ -4,31 +4,28 @@
 @using System.Data
 @using BSM.Shared.Model;
 
-<h4>Add Category</h4>
-<br>
-<br>
 
-<div class="body d-flex py-lg-3 py-md-2">
-    <div class="container-xxl">
 
-        <div class="row align-items-center">
 
-            <div class="col-md-4">
-                <label for="exampleFormControlTextarea78d" class="form-label">Category Name</label>
-                <input type="text" @bind="categoryname" class="form-control" />
 
-            </div>
-            <div class="col-md-4">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-primary" @onclick="saveData">Save</button>
+<div class="rifgt-sec">
+    <div class="pageheader"><h4>Add Category</h4></div>
+
+    <div class="rifgt-sec1 ccd">
+        <div class="mainh">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <label for="exampleFormControlTextarea78d" class="form-label">Category Name</label>
+                    <input type="text" @bind="categoryname" class="form-control" />
+
+                </div>
+                <div class="col-md-4 btntop">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" @onclick="saveData">Save</button>
+                </div>
             </div>
         </div>
 
-        <br /> <br />
-
-        <div class="row align-items-center">
-
-        </div> <!-- Row end  -->
         <div class="row clearfix g-3">
             <div class="col-sm-12">
                 <div class="card mb-3">
@@ -72,46 +69,48 @@
                     </div>
                 </div>
             </div>
-        </div><!-- Row End -->
+        </div>   
     </div>
 </div>
 
+ 
 
 
-@code {
-    @inject NavigationManager NavigationManager;
+
+    @code {
+        @inject NavigationManager NavigationManager;
 
 
-    private DataTable categoryList;
+        private DataTable categoryList;
 
 
-    protected override async Task OnInitializedAsync()
-    {
-        var response = await Http.GetFromJsonAsync<CommonResponse>("api/Master/showCategory");
-
-        categoryList = Newtonsoft.Json.JsonConvert.DeserializeObject<DataTable>(response.responseValue.ToString());
-    }
-
-
-    string categoryname;
-    public async Task saveData()
-    {
-        var obj = new
+        protected override async Task OnInitializedAsync()
         {
-            name = categoryname,
+            var response = await Http.GetFromJsonAsync<CommonResponse>("api/Master/showCategory");
 
-        };
-        System.Net.Http.HttpResponseMessage response = await Http.PostAsJsonAsync<dynamic>("api/Master/insertCategory", obj);
-
-        var result = response.Content.ReadFromJsonAsync<CommonResponse>().Result;
-        if (result.status == 1)
-        {
-            //mssg = "Save Sucessfully";
-           // NavigationManager.NavigateTo("Category", true);
-            return;
+            categoryList = Newtonsoft.Json.JsonConvert.DeserializeObject<DataTable>(response.responseValue.ToString());
         }
 
+
+        string categoryname;
+        public async Task saveData()
+        {
+            var obj = new
+            {
+                name = categoryname,
+
+            };
+            System.Net.Http.HttpResponseMessage response = await Http.PostAsJsonAsync<dynamic>("api/Master/insertCategory", obj);
+
+            var result = response.Content.ReadFromJsonAsync<CommonResponse>().Result;
+            if (result.status == 1)
+            {
+                //mssg = "Save Sucessfully";
+                // NavigationManager.NavigateTo("Category", true);
+                return;
+            }
+
+        }
+
+
     }
-
-
-}

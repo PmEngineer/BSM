@@ -20357,7 +20357,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
 
         .brand-icon .logo-icon svg {
-            width: 50px
+            width: 50px;
+            color: #28447e;
         }
 
             .brand-icon .logo-icon svg path {
@@ -21374,9 +21375,9 @@ body.rtl_mode table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td
 }
 
 .form-control, .form-select {
-    border-color: var(--border-color);
+  /*  border-color: var(--border-color);
     background-color: var(--color-200);
-    color: var(--text-color);
+    color: var(--text-color);*/
     font-size: 16px
 }
 
@@ -21821,9 +21822,9 @@ body.rtl_mode table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td
     }
 
         .table tr th {
-            color: var(--text-color);
+          /*  color: var(--text-color);
             text-transform: uppercase;
-            font-size: 12px
+            font-size: 12px*/
         }
 
         .table tr td {
@@ -22549,11 +22550,11 @@ body.rtl_mode table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td
     -o-transition: ease 0.1s;
     -webkit-transition: ease 0.1s;
     transition: ease 0.1s;
-    background: var(--primary-color);
+/*    background: var(--primary-color);
     z-index: 99999;
     margin: 25px;
     height: calc(100vh - 50px);
-    width: 260px;
+    width: 260px;*/
     -webkit-box-flex: 0;
     -ms-flex-positive: 0;
     flex-grow: 0;
@@ -22565,21 +22566,21 @@ body.rtl_mode table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td
 
 @media only screen and (max-width: 1279px) {
     .sidebar {
-        position: fixed;
+        /*position: fixed;
         left: -400px;
         height: 100vh;
         margin: 0px;
-        border-radius: 0px
+        border-radius: 0px*/
     }
 }
 
 @media only screen and (min-width: 1279px) {
     .sidebar {
-        overflow-y: auto;
+      /*  overflow-y: auto;
         overflow-y: scroll;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        overflow-y: auto
+        overflow-y: auto*/
     }
 
         .sidebar::-webkit-scrollbar {
@@ -22643,7 +22644,8 @@ body.rtl_mode table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td
 }
 
     .sidebar .menu-list .m-link:hover, .sidebar .menu-list .m-link.active, .sidebar .menu-list .ms-link:hover, .sidebar .menu-list .ms-link.active {
-        color: var(--secondary-color)
+        color: var(--secondary-color);
+       
     }
 
         .sidebar .menu-list .m-link:hover::before, .sidebar .menu-list .m-link.active::before, .sidebar .menu-list .ms-link:hover::before, .sidebar .menu-list .ms-link.active::before {
