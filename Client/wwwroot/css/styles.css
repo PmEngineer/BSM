@@ -1157,19 +1157,19 @@ button.bg-danger:hover {
 }
 
 .btn-primary:focus {
-  background-color: #621aff;
-  border: 1px solid #621aff;
+    background-color: #607dba;
+    border: 1px solid #607dba;
 }
 
 .btn-primary:active {
-  background-color: #621aff;
-  border: 1px solid #621aff;
+    background-color: #607dba;
+    border: 1px solid #607dba;
 }
 
-.btn-primary:active:focus {
-  background-color: #621aff;
-  border: 1px solid #621aff;
-}
+    .btn-primary:active:focus {
+        background-color: #607dba;
+        border: 1px solid #607dba;
+    }
 
 .btn-primary:active:focus:not(:disabled):not(.disabled) {
   -webkit-box-shadow: unset;
@@ -4032,13 +4032,25 @@ html.menu-opened body {
 
 .top-nav-search {
   float: left;
-  margin-left: 15px;
+  margin-left: 0px;
+}
+.pagi {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+}
+div#DataTables_Table_0_paginate ul.pagination {
+    float: right;
 }
 
 .top-nav-search form {
   margin-top: 10px;
   position: relative;
-  width: 230px;
+  min-width: 230px;
+  width:40%;
 }
 
 .top-nav-search .form-control {
@@ -4050,16 +4062,18 @@ html.menu-opened body {
 }
 
 .top-nav-search .btn {
-  background-color: transparent;
-  border-color: transparent;
-  color: #333;
-  min-height: 40px;
-  padding: 7px 15px;
-  position: absolute;
-  right: 0;
-  top: 0;
+    background-color: #29457e;
+    border-color: #29457e;
+    color: #fff;
+    min-height: 40px;
+    padding: 7px 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
-
+div#DataTables_Table_0_info {
+    padding-top: 7px;
+}
 .top-nav-search.active form {
   display: block;
   left: 0;
