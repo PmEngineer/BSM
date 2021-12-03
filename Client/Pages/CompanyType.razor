@@ -7,7 +7,7 @@
 
 
 <div class="rifgt-sec">
-    <div class="pageheader"><h4>Add Company Type</h4></div>
+    <div class="pageheader"><h4>Company Type</h4></div>
 
     <div class="rifgt-sec1 ccd">
         <div class="mainh">
@@ -28,6 +28,12 @@
 
 
         <div class="row clearfix g-3">
+            <div class="top-nav-search">
+                <form>
+                    <input type="text" class="form-control" placeholder="Search here">
+                    <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
             <div class="col-sm-12">
                 <div class="card mb-3">
                     <div class="card-body">
@@ -37,44 +43,44 @@
                         }
                         else
                         {
-                               <div class="table-responsive" style="max-height: 60vh;">
-                                    <table id="myProjectTable" class="table table-hover1 align-middle mb-0" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>Sr No.</th>
-                                                <th>Company Type Name</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @if (companyList != null)
+                            <div class="table-responsive" style="max-height: 60vh;">
+                                <table id="myProjectTable" class="table table-hover1 align-middle mb-0" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr No.</th>
+                                            <th>Company Type Name</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (companyList != null)
+                                        {
+                                            int j = 1;
+                                            @foreach (DataRow dr in companyList.Rows)
                                             {
-                                                int j = 1;
-                                                @foreach (DataRow dr in companyList.Rows)
-                                                {
 
-                                                    <tr>
-                                                        <td>@j</td>
-                                                        <td>@dr["typename"].ToString()</td>
-                                                        <td>
-                                                            <a class="actionbtn" alt="Edit"><i class="far fa-edit"></i></a>
-                                                            <a class="actionbtn" alt="Delete"><i class="far fa-trash-alt"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    j++;
-                                                }
+                                                <tr>
+                                                    <td>@j</td>
+                                                    <td>@dr["typename"].ToString()</td>
+                                                    <td>
+                                                        <a class="actionbtn" alt="Edit"><i class="far fa-edit"></i></a>
+                                                        <a class="actionbtn" alt="Delete"><i class="far fa-trash-alt"></i></a>
+                                                    </td>
+                                                </tr>
+                                                j++;
                                             }
-                                        </tbody>
-                                    </table>
-                                </div>
-                                }
-
+                                        }
+                                    </tbody>
+                                </table>
                             </div>
-                        </div>
+                        }
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
+
 </div>
 
 
@@ -108,7 +114,42 @@
         if (result.status == 1)
         {
             //mssg = "Save Sucessfully";
-           // NavigationManager.NavigateTo("CompanyType", true);
+            // NavigationManager.NavigateTo("CompanyType", true);
+
+            <div class="toatr">
+                <div class="toatr-inner">
+
+                    <div class="toast alert-success toast-reg1" data-autohide="false">
+                        <div class="toast-header bg-success text-white">
+                            <strong class="mr-auto"><i class="fa fa-check" aria-hidden="true"></i></strong>
+                            <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast"><i class="fa fa-times" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="toast-body">Your document has submitted succesfully!!</div>
+                    </div>
+
+                    <div class="toast alert-warning toast-reg1" data-autohide="false">
+                        <div class="toast-header bg-warning text-white">
+                            <strong class="mr-auto"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></strong>
+                            <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast"><i class="fa fa-times" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="toast-body">Please Select Proper Input Please Select !!</div>
+                    </div>
+
+
+                    <div class="toast alert-danger toast-reg1" data-autohide="false">
+                        <div class="toast-header  bg-danger text-white">
+                            <strong class="mr-auto"><i class="fa fa-exclamation" aria-hidden="true"></i></strong>
+                            <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast"><i class="fa fa-times" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="toast-body">This document have a problem Error Err!!</div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
             return;
         }
 
