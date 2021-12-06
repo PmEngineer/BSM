@@ -29,11 +29,11 @@
 
             </div>
         </div>
-        <br/>
+        <br />
         <div class="row align-items-center">
 
             <div class="col-md-4">
-                <label for="exampleFormControlTextarea78d" class="form-label">Country</label>               
+                <label for="exampleFormControlTextarea78d" class="form-label">Country</label>
                 <select class="form-control" @bind="country">
                     <option>Country</option>
                 </select>
@@ -41,7 +41,14 @@
             <div class="col-md-4">
                 <label for="exampleFormControlTextarea78d" class="form-label">State</label>
                 <select class="form-control" @bind="state">
-                    <option>State</option>
+                    @if (countryList != null)
+                    {
+                        <option value=0 disabled selected> Select Product BackLog </option>
+                        foreach (DataRow dr in countryList.Rows)
+                        {
+                            <option value="@dr["productBackLogId"].ToString()"> @dr["module"].ToString() </option>
+                        }
+                    }
                 </select>
 
             </div>
@@ -98,7 +105,7 @@
                                                 <td>@dr["typename"].ToString()</td>
                                                 <td>
                                                     <a class="btn btn-info btn-sm">Edit</a>
-                                                    <a class="btn btn-danger btn-sm">Delete</a>
+                                                    @*<a class="btn btn-danger btn-sm" @onclick="()=>deleteData(id)">Delete</a>*@
                                                 </td>
                                             </tr>
                                             j++;
@@ -113,15 +120,16 @@
             </div>
         </div><!-- Row End -->
     </div>
-    </div>
+</div>
 
 
 
 @code {
     @inject NavigationManager NavigationManager;
-
+   
 
     private DataTable companyList;
+    private DataTable countryList;
 
 
     protected override async Task OnInitializedAsync()
@@ -129,6 +137,16 @@
         var response = await Http.GetFromJsonAsync<CommonResponse>("api/Master/showCompany");
 
         companyList = Newtonsoft.Json.JsonConvert.DeserializeObject<DataTable>(response.responseValue.ToString());
+
+        await getCountry();
+    }
+
+    public async Task getCountry()
+    {
+        var response = await Http.GetFromJsonAsync<CommonResponse>("api/Master/getProjectBacklog");
+        countryList = Newtonsoft.Json.JsonConvert.DeserializeObject<DataTable>(response.responseValue.ToString());
+
+
     }
 
 
@@ -156,6 +174,8 @@
         }
 
     }
+
+
 
 
 }

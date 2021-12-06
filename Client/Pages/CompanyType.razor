@@ -3,6 +3,8 @@
 @inject HttpClient Http
 @using System.Data
 @using BSM.Shared.Model;
+@using Blazored.Toast;
+@attribute [Authorize]
 
 <h4>Add Company Type</h4>
 <br>
@@ -53,13 +55,13 @@
                                         int j = 1;
                                         @foreach (DataRow dr in companyList.Rows)
                                         {
-
+                                            string id = @dr["companytype_id"].ToString();
                                             <tr>
                                                 <td>@j</td>
                                                 <td>@dr["typename"].ToString()</td>
                                                 <td>
                                                     <a class="btn btn-info btn-sm">Edit</a>
-                                                    <a class="btn btn-danger btn-sm">Delete</a>
+                                                    <a class="btn btn-danger btn-sm" @onclick="()=>deleteData(id)">Delete</a>
                                                 </td>
                                             </tr>
                                             j++;
@@ -76,13 +78,17 @@
     </div>
 </div>
 
-
+<button class="btn btn-info" @onclick="@(() => toastService.ShowInfo("Welcome to TheCodehubs"))">Info Toast</button>
 
 @code {
     @inject NavigationManager NavigationManager;
-
+    @inject Blazored.SessionStorage.ISessionStorageService sessionStorage;
+    @inject IToastService toastService
+    @inject IJSRuntime  js
 
     private DataTable companyList;
+    string apiURL = string.Empty;
+    string statusMessage = string.Empty;
 
 
     protected override async Task OnInitializedAsync()
@@ -107,11 +113,48 @@
         if (result.status == 1)
         {
             //mssg = "Save Sucessfully";
-           // NavigationManager.NavigateTo("CompanyType", true);
+            // NavigationManager.NavigateTo("CompanyType", true);
             return;
         }
 
     }
 
+    public async Task deleteData(string id)
+    {
+        if (!await js.InvokeAsync<bool>("confirm", $"Are you sure you want to delete the company?"))
+            return;
+
+
+
+        var obj = new
+        {
+            id = id,
+            userId = 1
+
+        };
+
+        HttpResponseMessage response = null;
+
+        apiURL = "api/Master/deleteCompanyType";
+
+        response = await Http.PostAsJsonAsync<dynamic>(apiURL,obj);
+        var result = response.Content.ReadFromJsonAsync<CommonResponse>().Result;
+        if (result.status == 1)
+        {
+            statusMessage = "Sprint Deleted Successfully";
+            await js.InvokeAsync<bool>("alert", "Company Deleted Successfully");
+            StateHasChanged();
+            // await resetConrols();
+            toastService.ShowToast(ToastLevel.Success, statusMessage);
+            return;
+        }
+        else
+        {
+            statusMessage = result.responseValue.ToString();
+            toastService.ShowToast(ToastLevel.Error, statusMessage);
+            return;
+        }
+
+    }
 
 }

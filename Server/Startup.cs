@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
 using BSM.Server.Service;
+using Blazored.Toast;
 
 namespace BSM.Server
 {
@@ -28,6 +29,7 @@ namespace BSM.Server
             services.AddRazorPages();
             services.AddControllersWithViews().AddNewtonsoftJson(options =>
             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddBlazoredToast();
 
         }
 

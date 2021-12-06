@@ -44,7 +44,7 @@ namespace BSM.Server.Controllers
         public IActionResult showCompanyType()
         {
             try
-            {
+                {
                 var response = masterService.showCompanyType();
 
                 if (response == null)
