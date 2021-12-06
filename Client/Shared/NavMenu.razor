@@ -1,76 +1,80 @@
-﻿<div class="sidebar-inner slimscroll">
-    <div id="sidebar-menu" class="sidebar-menu">
-        <ul>
-            <li class="active">
-                <a href="javascript:void(0);"><i class="fas fa-home"></i>  <span>Dashboard</span></a>
-            </li>
-            <li>
-                <a href="Addcategory"><i class="fas fa-home"></i> <span>Add Category</span></a>
-            </li>
-            <li>
-                <a href="javascript:void(0);"><i class="fas fa-home"></i>  <span>Home</span></a>
-            </li>
-            <li class="submenu">
-                <a href="javascript:void(0);"><i class="fas fa-home"></i>  <span> Forms </span> <span class="menu-arrow"></span></a>
-                <ul>
-                    <li><a href="Addcategory">Horizontal Form </a></li>
-                    <li><a href="Addcategory"> Form Validation </a></li>
+﻿@*<div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="active">
+                    <a href="javascript:void(0);"><i class="fas fa-home"></i>  <span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="Addcategory"><i class="fas fa-home"></i> <span>Add Category</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i class="fas fa-home"></i>  <span>Home</span></a>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0);"><i class="fas fa-home"></i>  <span> Forms </span> <span class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="Addcategory">Horizontal Form </a></li>
+                        <li><a href="Addcategory"> Form Validation </a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0);"><i class="fas fa-home"></i>  <span> Tables </span> <span class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="Addcategory">Basic Tables </a></li>
+                        <li><a href="Addcategory">Data Table </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>*@
+
+
+
+
+<div class="sidebar">
+    <div class="d-flex flex-column h-100">
+        <a href="#" class="mb-0 brand-icon">
+            <span class="logo-icon">
+                <svg width="35" height="35" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
+                    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
+                </svg>
+            </span>
+            <span class="logo-text">Admin</span>
+        </a>
+         
+        <ul class="menu-list flex-grow-1 mt-3" style="padding: 0;">
+            <li><a class="m-link" href="#"><i class="fas fa-briefcase"></i> <span>Dashboard</span></a></li>
+            <li class="collapsed">
+                <a class="m-link" data-bs-toggle="collapse" data-bs-target="#Masters-Components" href="#">
+                  <i class="fas fa-user"></i><span>Masters</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"><i class="fas fa-chevron-down"></i></span>
+                </a>
+                <ul class="sub-menu collapse" id="Masters-Components">
+                    <li><a class="ms-link" href="CompanyType"><span>Company Type</span></a></li>
+                    <li><a class="ms-link" href="Category"><span>Category</span></a></li>
+                    <li><a class="ms-link" href="SubCategory"><span>Sub Category</span></a></li>
+                    <li><a class="ms-link" href="Brand"><span>Brand</span></a></li>
+                    <li><a class="ms-link" href="FinancialYear"><span>Financial Year</span></a></li>
                 </ul>
             </li>
-            <li class="submenu">
-                <a href="javascript:void(0);"><i class="fas fa-home"></i>  <span> Tables </span> <span class="menu-arrow"></span></a>
-                <ul>
-                    <li><a href="Addcategory">Basic Tables </a></li>
-                    <li><a href="Addcategory">Data Table </a></li>
-                </ul>
-            </li>
+
         </ul>
+
+
     </div>
 </div>
 
+@code {private bool collapseNavMenu = true;
+    @inject NavigationManager NavigationManager;
+            private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+            private void ToggleNavMenu()
+            {
+                collapseNavMenu = !collapseNavMenu;
+            }
+
+}
 
 
 
-
-@*<div class="top-row pl-4 navbar navbar-dark">
-        <a class="navbar-brand" href="">BSM</a>
-        <button class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-
-    <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-        <ul class="nav flex-column">
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                    <span class="oi oi-home" aria-hidden="true"></span> Home
-                </NavLink>
-            </li>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="counter">
-                    <span class="oi oi-plus" aria-hidden="true"></span> Counter
-                </NavLink>
-            </li>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="CompanyType">
-                    <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-                </NavLink>
-            </li>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="addmenu">
-                    <span class="oi oi-list-rich" aria-hidden="true"></span>Menu
-                </NavLink>
-            </li>
-        </ul>
-    </div>
-
-@code {
-    private bool collapseNavMenu = true;
-
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}*@

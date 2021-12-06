@@ -63,26 +63,33 @@ body {
     border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
     margin-bottom: 10px;
 }
+ul.menu-list li a:hover {
+    color: #acbbd9 !important;
+}
 
 .bg-opacity10 {
   width: 100%;
   height: 100%;
   background-image: repeating-linear-gradient(170deg, #D2DBE8, #E4C9E2, #FCD1B7, #FDE8DB);
 }
+span.noti i {
+    font-size: 29px;
+    color: #28447e;
+}
 
 .table thead th {
     position: -webkit-sticky;
     position: sticky;
     top: -2px;
-    color: #213e7a;
-    background: #e3c9e2;
+    color: #fff;
+    background: #29457e;
     font-weight: 700 !important;
-    border: 1px solid #c68fcb;
+    border: 1px solid #5474b5;
 }
- 
+
 
 .table tbody tr td {
-    border: 1px solid #c68fcb;
+    border: 1px solid #29457e;
 }
 .card-header-inner h4 {
     font-size: 16px;
@@ -1137,30 +1144,32 @@ button.bg-danger:hover {
 }
 
 .btn-primary {
-    /*  background-color: #213e7a;
-  border: 1px solid #213e7a;*/
-    background-image: repeating-linear-gradient( 139deg,#6d9ee5,#cf5ec6, #d3936d, #db9d77 );
+    background: #29457e;
+    border: 1px solid #29457e;
 }
 
 .btn-primary:hover {
   background-color: #621aff;
   border: 1px solid #621aff;
 }
+.btntop {
+    margin-top: 28px;
+}
 
 .btn-primary:focus {
-  background-color: #621aff;
-  border: 1px solid #621aff;
+    background-color: #607dba;
+    border: 1px solid #607dba;
 }
 
 .btn-primary:active {
-  background-color: #621aff;
-  border: 1px solid #621aff;
+    background-color: #607dba;
+    border: 1px solid #607dba;
 }
 
-.btn-primary:active:focus {
-  background-color: #621aff;
-  border: 1px solid #621aff;
-}
+    .btn-primary:active:focus {
+        background-color: #607dba;
+        border: 1px solid #607dba;
+    }
 
 .btn-primary:active:focus:not(:disabled):not(.disabled) {
   -webkit-box-shadow: unset;
@@ -2166,13 +2175,43 @@ button.bg-danger:hover {
 
 .card {
     background: #fff;
-    -webkit-box-shadow: 0 0 13px 0 #e3c9e2;
-    box-shadow: 0 0 13px 0 #e3c9e2;
-    margin-bottom: 30px;
-    border-radius: 20px;
-    border: 0;
+    /*  -webkit-box-shadow: 0 0 20px 0 #ccc;
+    box-shadow: 0 0 20px 0 #ccc;*/
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
+.rifgt-sec1 {
+    padding: 15px;
+    float: left;
+    width: 100%;
+}
+.mainh {
+    float: left;
+    width: 100%;
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+.rifgt-sec {
+    float: left;
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
 
+}
+.pageheader {
+    float: left;
+    width: 100%;
+}
+    .pageheader h4 {
+        font-size: 19px;
+        color: #ffffff;
+        padding: 10px;
+        background: #29457e;
+        border-radius: 10px 10px 0 0;
+    }
     .card .card-header {
         border-color: #f0f1f5;
         background-color: #fff;
@@ -2186,7 +2225,10 @@ button.bg-danger:hover {
 
 .card-body {
   position: relative;
-  padding: 1.5rem;
+  padding: .8rem;
+}
+.mainh label {
+    color: #29457e;
 }
 
 .card-header:first-child {
@@ -3990,13 +4032,25 @@ html.menu-opened body {
 
 .top-nav-search {
   float: left;
-  margin-left: 15px;
+  margin-left: 0px;
+}
+.pagi {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+}
+div#DataTables_Table_0_paginate ul.pagination {
+    float: right;
 }
 
 .top-nav-search form {
   margin-top: 10px;
   position: relative;
-  width: 230px;
+  min-width: 230px;
+  width:40%;
 }
 
 .top-nav-search .form-control {
@@ -4008,38 +4062,95 @@ html.menu-opened body {
 }
 
 .top-nav-search .btn {
-  background-color: transparent;
-  border-color: transparent;
-  color: #333;
-  min-height: 40px;
-  padding: 7px 15px;
-  position: absolute;
-  right: 0;
-  top: 0;
+    background-color: #29457e;
+    border-color: #29457e;
+    color: #fff;
+    min-height: 40px;
+    padding: 7px 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
-
+div#DataTables_Table_0_info {
+    padding-top: 7px;
+}
 .top-nav-search.active form {
   display: block;
   left: 0;
   position: absolute;
 }
-
-.sidebar {
-  background-color: #fff;
-  bottom: 28px;
-  left: 33px;
-  margin-top: 0;
-  position: fixed;
-  top: 92px;
-  -webkit-transition: all .2s ease-in-out 0s;
-  transition: all .2s ease-in-out 0s;
-  width: 240px;
-  z-index: 1001;
-  border-radius: 20px;
-  -webkit-box-shadow: 0 0 13px 0 rgba(82, 63, 105, 0.05);
-  box-shadow: 0 0 13px 0 rgba(82, 63, 105, 0.05);
-  overflow-y: hidden;
+a.m-link i {
+    margin-right: 8px;
 }
+
+a.m-link {
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    display: inline-block;
+    padding: 5px 0;
+}
+ul.sub-menu {
+    padding: 0;
+}
+
+    ul.sub-menu li a {
+        float: left;
+        width: 100%;
+        padding: 7px 0;
+        border-bottom: 1px solid #4c628f;
+        color: #90ace9;
+    }
+span.arrow.icofont-dotted-down.ms-auto.text-end.fs-5 i {
+    float: right;
+    font-size: 13px;
+    padding-top: 10px;
+}
+.sidebar {
+    background-image: repeating-linear-gradient( 170deg,#28447e,#2a467f, #4e69a3, #7998d9 );
+    left: 33px;
+    margin-top: 0;
+    position: fixed;
+    top: 92px;
+    -webkit-transition: all .2s ease-in-out 0s;
+    transition: all .2s ease-in-out 0s;
+    width: 240px;
+    z-index: 1001;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 0 13px 0 rgba(82, 63, 105, 0.05);
+    box-shadow: 0 0 13px 0 rgba(82, 63, 105, 0.05);
+    overflow-y: hidden;
+    padding: 15px;
+    height: 87%;
+}
+.actionbtn .fa-trash-alt {
+    color: #ffffff;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    background: #ab1515;
+    text-align: center;
+    font-size: 13px;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor:pointer;
+}
+
+.actionbtn .fa-edit {
+    color: #ffffff;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    background: #1da550;
+    text-align: center;
+    font-size: 13px;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+    .sidebar a {
+        color: #fff;
+    }
 
 .sidebar .sidebar-menu > ul > li > a span {
   -webkit-transition: all .2s ease-in-out 0s;
@@ -5768,6 +5879,8 @@ table.table-inbox tbody tr.checked {
 }
 
 @media (max-width: 991.98px) {
+
+  
     body {
         overflow-y: auto;
     }
