@@ -4,36 +4,40 @@
 @using System.Data
 @using BSM.Shared.Model;
 
-<h4>Add Brand</h4>
-<br>
-<br>
 
-<div class="body d-flex py-lg-3 py-md-2">
-    <div class="container-xxl">
 
-        <div class="row align-items-center">
 
-            <div class="col-md-4">
-                <label for="exampleFormControlTextarea78d" class="form-label">Brand Name</label>
-                <input type="text" @bind="brandname" class="form-control" />
 
-            </div>
-            <div class="col-md-4">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-primary" @onclick="saveData">Save</button>
+<div class="rifgt-sec">
+    <div class="pageheader"><h4>Brand</h4></div>
+
+    <div class="rifgt-sec1 ccd">
+        <div class="mainh">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <label for="exampleFormControlTextarea78d" class="form-label">Brand Name</label>
+                    <input type="text" @bind="brandname" class="form-control" />
+
+                </div>
+                <div class="col-md-4 btntop">
+                    <button type="submit" class="btn btn-primary" @onclick="saveData">Save</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+
+                </div>
             </div>
         </div>
 
-        <br /> <br />
-
-        <div class="row align-items-center">
-
-        </div> <!-- Row end  -->
         <div class="row clearfix g-3">
+            <div class="top-nav-search">
+                <form>
+                    <input type="text" class="form-control" placeholder="Search here">
+                    <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
             <div class="col-sm-12">
                 <div class="card mb-3">
                     <div class="card-body">
-                        @if (companyList == null)
+                        @if (brandList == null)
                         {
                             <p style="color:red"><em>No Record Found</em></p>
                         }
@@ -43,15 +47,15 @@
                                 <thead>
                                     <tr>
                                         <th>Sr No.</th>
-                                        <th>Designation Name</th>
+                                        <th>Brand Name</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if (companyList != null)
+                                    @if (brandList != null)
                                     {
                                         int j = 1;
-                                        @foreach (DataRow dr in companyList.Rows)
+                                        @foreach (DataRow dr in brandList.Rows)
                                         {
 
                                             <tr>
@@ -70,26 +74,45 @@
                         }
 
                     </div>
+                    <div class="pagi">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5">
+                                <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 12 entries</div>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+                                <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                    <ul class="pagination">
+                                        <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                        <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                        <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                                        <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">Next</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div><!-- Row End -->
+        </div>
     </div>
 </div>
 
+ 
+ 
 
 
 @code {
     @inject NavigationManager NavigationManager;
 
 
-    private DataTable companyList;
+    private DataTable brandList;
 
 
     protected override async Task OnInitializedAsync()
     {
-        var response = await Http.GetFromJsonAsync<CommonResponse>("api/Master/showCompanyType");
+        var response = await Http.GetFromJsonAsync<CommonResponse>("api/Master/showBrand");
 
-        companyList = Newtonsoft.Json.JsonConvert.DeserializeObject<DataTable>(response.responseValue.ToString());
+        brandList = Newtonsoft.Json.JsonConvert.DeserializeObject<DataTable>(response.responseValue.ToString());
     }
 
 
@@ -101,7 +124,7 @@
             name = brandname,
 
         };
-        System.Net.Http.HttpResponseMessage response = await Http.PostAsJsonAsync<dynamic>("api/Master/insertCompanyType", obj);
+        System.Net.Http.HttpResponseMessage response = await Http.PostAsJsonAsync<dynamic>("api/Master/insertBrand", obj);
 
         var result = response.Content.ReadFromJsonAsync<CommonResponse>().Result;
         if (result.status == 1)

@@ -1,6 +1,56 @@
 ﻿@inherits LayoutComponentBase
 
+
+
+
 <div class="page">
+    
+    <div class="main">
+        <div class="bg-opacity">
+            <div class="header">
+
+                <div class="header-left">
+                    <a href="#" class="logo"><img src="images/BMSlogo7.png" alt="Logo"></a>
+                    <a href="#" class="logo logo-small"><img src="images/smalllogo.png" alt="Logo" width="30" height="30"></a>
+                </div>
+
+                @*<a href="javascript:void(0);" id="toggle_btn"><i class="fas fa-bars"></i></a>*@
+                <a class="mobile_btn" id="mobile_btn" onclick="myFunction()"><i class="fas fa-bars"></i></a>
+
+
+                <ul class="nav nav-tabs user-menu">
+                    <li class="nav-item">
+                        <a href="javascript:void(0);"><span class="noti"><i class="fas fa-bell"></i></span></a> 
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="bg-opacity1">
+               <div class="whitebg-opacity1">
+                    <div class="sidebar" id="sidebar">
+                        <NavMenu />
+                    </div>
+
+
+                    <div class="page-wrapper">
+                        <div class="content container-fluid">
+                            <div class="content1">
+                                @Body
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+     </div>
+</div>
+
+
+
+
+@*<div class="page">
     <div class="sidebar">
         <NavMenu />
     </div>
@@ -14,4 +64,7 @@
             @Body
         </div>
     </div>
-</div>
+</div>*@
+
+
+
