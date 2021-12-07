@@ -61,14 +61,15 @@
                                         @foreach (DataRow dr in companyList.Rows)
                                         {
                                             string id = @dr["companytype_id"].ToString();
-                                            <tr>
-                                                <td>@j</td>
-                                                <td>@dr["typename"].ToString()</td>
-                                                <td>
-                                                    <a class="btn btn-info btn-sm">Edit</a>
-                                                    <a class="btn btn-danger btn-sm" @onclick="()=>deleteData(id)">Delete</a>
-                                                </td>
-                                            </tr>
+                                    <tr>
+                                        <td>@j</td>
+                                        <td>@dr["typename"].ToString()</td>
+                                        <td>
+                                            <a class="actionbtn"><i class="far fa-edit"></i></a>
+                                            <a class="actionbtn" @onclick="()=>deleteData(id)"><i class="far fa-trash-alt"></i></a>
+                                        </td>
+                                        
+                                    </tr>
                                             j++;
                                         }
                                     }
